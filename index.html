@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rooted — Houseplants delivered</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ============ HEADER ============ -->
+  <header class="site-header">
+    <div class="wrap header-row">
+      <a href="#" class="logo">
+        <span class="logo-mark">🌿</span>
+        <span>Rooted</span>
+      </a>
+      <nav class="main-nav">
+        <a href="#shop">Shop</a>
+        <a href="#care">Plant care</a>
+        <a href="#about">About</a>
+      </nav>
+      <button id="cart-toggle" class="cart-btn" aria-haspopup="dialog" aria-controls="cart-drawer">
+        <span class="cart-icon">🧺</span>
+        <span>Cart</span>
+        <span id="cart-count" class="cart-count">0</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero">
+    <div class="wrap hero-row">
+      <div class="hero-copy">
+        <p class="hero-eyebrow">New arrivals, freshly potted</p>
+        <h1>Bring the outside in.</h1>
+        <p class="hero-sub">
+          Six easy-to-love plants, hand-picked for beginners. Every order ships
+          in a nursery pot with a care card, so you'll always know what to do next.
+        </p>
+        <a href="#shop" class="btn btn-primary">Shop the collection</a>
+      </div>
+      <div class="hero-art">
+        <img src="images/hero-leaves.svg" alt="Illustrated houseplant leaves in a circle" width="420" height="420">
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SHOP ============ -->
+  <section id="shop" class="shop">
+    <div class="wrap">
+      <div class="shop-heading">
+        <h2>Find your plant</h2>
+        <p>Filter by what matters to you, or search by name.</p>
+      </div>
+
+      <div class="shop-controls">
+        <div class="chips" id="category-chips">
+          <button class="chip is-active" data-category="all">All plants</button>
+          <button class="chip" data-category="low-light">Low light</button>
+          <button class="chip" data-category="pet-safe">Pet safe</button>
+          <button class="chip" data-category="statement">Statement</button>
+          <button class="chip" data-category="easy-care">Easy care</button>
+        </div>
+        <div class="search-box">
+          <input type="search" id="search-input" placeholder="Search plants…" aria-label="Search plants">
+        </div>
+      </div>
+
+      <div id="product-grid" class="product-grid">
+        <!-- Product cards are rendered here by script.js -->
+      </div>
+
+      <p id="empty-state" class="empty-state" hidden>
+        No plants match that search. Try a different name or clear the filters.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ CARE STRIP ============ -->
+  <section id="care" class="care-strip">
+    <div class="wrap care-grid">
+      <div class="care-item">
+        <span class="care-icon">💧</span>
+        <h3>Water less than you think</h3>
+        <p>Most beginner plants prefer to dry out between waterings. Soggy soil is the #1 cause of trouble.</p>
+      </div>
+      <div class="care-item">
+        <span class="care-icon">☀️</span>
+        <h3>Bright, indirect light</h3>
+        <p>A spot a few feet from a window works for almost everything on this page — no direct sun needed.</p>
+      </div>
+      <div class="care-item">
+        <span class="care-icon">📋</span>
+        <h3>A care card with every order</h3>
+        <p>Each plant ships with simple, specific instructions — no guesswork required.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT / FOOTER ============ -->
+  <footer id="about" class="site-footer">
+    <div class="wrap footer-row">
+      <div>
+        <p class="logo footer-logo"><span class="logo-mark">🌿</span> Rooted</p>
+        <p class="footer-note">A small demo shop built to learn HTML, CSS and JavaScript.</p>
+      </div>
+      <p class="footer-copy">Built for practice — not a real store.</p>
+    </div>
+  </footer>
+
+  <!-- ============ CART DRAWER ============ -->
+  <div id="cart-backdrop" class="cart-backdrop"></div>
+  <aside id="cart-drawer" class="cart-drawer" role="dialog" aria-label="Shopping cart" aria-hidden="true">
+    <div class="cart-header">
+      <h2>Your cart</h2>
+      <button id="cart-close" class="icon-btn" aria-label="Close cart">✕</button>
+    </div>
+
+    <div id="cart-items" class="cart-items">
+      <!-- Cart line items are rendered here by script.js -->
+    </div>
+
+    <p id="cart-empty" class="cart-empty" hidden>
+      Your cart is empty. Time to add some green.
+    </p>
+
+    <div class="cart-footer">
+      <div class="cart-subtotal-row">
+        <span>Subtotal</span>
+        <span id="cart-subtotal">$0.00</span>
+      </div>
+      <button id="checkout-btn" class="btn btn-primary btn-block">Checkout</button>
+      <p class="cart-note">This is a demo — checkout just shows a confirmation.</p>
+    </div>
+  </aside>
+
+  <!-- ============ TOAST ============ -->
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
